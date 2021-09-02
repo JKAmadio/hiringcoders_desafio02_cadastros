@@ -1,7 +1,9 @@
+import FormCliente from "./views/components/formClientes";
+
 function App() {
   return (
     <div className="App">
-      <h1>Estou funcionando</h1>
+      <FormCliente/>
     </div>
   );
 }
