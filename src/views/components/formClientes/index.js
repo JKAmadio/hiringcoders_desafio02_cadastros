@@ -9,21 +9,32 @@ function FormCliente(){
 	const [dataNascimento, setDataNascimento] = useState('')
 	const [clientes, setClientes] = useState([])
 
-	const handleSubmit = async (event) => {
+	const validateEmail = (email) => {
+		const validEmail = email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+		if (!validEmail)
+			alert("Email invalido")
+		else
+			alert('Email ok!')
+	}
+	const inputValidation = (nome, email, telefone, dataNascimento) => {
+		if (nome, email, telefone, dataNascimento) {
+			validateEmail(email);
+			alert("Todos os campos preenchidos!")
+			return (nome, email, telefone, dataNascimento)
+		} else {
+			alert("Por favor, preencha todos os campos")
+		}
+	}
+
+	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		// Informações individuais
-		console.log(nome)
-		console.log(email)
-		console.log(telefone)
-		console.log(dataNascimento)
-
-		// estabelecendo cliente
-		const cliente = {nome, email, telefone, dataNascimento}
-		console.log(cliente)
-		
-		// incluindo cliente na lista de clientes
-		setClientes(clientes => [...clientes, cliente])
+		if (inputValidation(nome, email, telefone, dataNascimento)) {
+			const cliente = {nome, email, telefone, dataNascimento}		
+			setClientes(clientes => [...clientes, cliente])
+		} else {
+			alert("Cadastro não realizado. Tente novamente")
+		}
 	}
 
 	return(
