@@ -9,70 +9,30 @@ function FormCliente(){
 	const [dataNascimento, setDataNascimento] = useState('')
 	const [clientes, setClientes] = useState([])
 
-	const validateNome = (name) => {
-		const validName = name.match(/^[a-z\s]*$/gi);
-		if (!validName) {
-			alert('Nome invalido')
-			return false;
-		}
-		else {
-			alert('Nome ok!')
-			return true;
-		}
-			
-	}
+	const inputValidation = () => {
+		const nomeRegExp = /^[a-z\s]*$/gi;
+		const emailRegExp = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
+		const telefoneRegExp = /^[(]..[)] [0-9]{5}-[0-9]{4}$/i;
+		const dataNascimentoRegExp = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/g;
 
-	const validateEmail = (email) => {
-		const validEmail = email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-		if (!validEmail) {
-			alert('Email invalido')
-			return false;
-		}
-		else{
-			alert('Email ok!')
-			return true;
-		}
-	}
-
-	const validateTelefone = (telefone) => {
-		const validTelefone = telefone.match(/^[(]..[)] [0-9]{5}-[0-9]{4}/i);
-		if (!validTelefone){
-			alert('Telefone invalido')
-			return false;
-		}
-		else{
-			alert('Telefone ok!')
-			return true;
-		}
-	}
-
-	const validateDataNascimento = (dataNascimento) => {
-		const validDataNascimento = dataNascimento.match(/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}/g);
-		if (!validDataNascimento){
-			alert('Data de Nascimento invalida')
-			return false;
-		}
-		else{
-			alert('Data de Nascimento ok!')
-			return true;
-		}
-	}
-
-
-
-	const inputValidation = (nome, email, telefone, dataNascimento) => {
-		if (validateNome(nome) & validateEmail(email) & validateTelefone(telefone) & validateDataNascimento(dataNascimento)) {
-			alert("Todos os campos preenchidos!")
-			return (nome, email, telefone, dataNascimento)
+		if(!(nome.match(nomeRegExp))) {
+			alert('Nome inválido')
+		} else if (!(email.match(emailRegExp))) {
+			alert('Email inválido')
+		} else if(!(telefone.match(telefoneRegExp))) {
+			alert('Telefone inválido')
+		} else if (!(dataNascimento.match(dataNascimentoRegExp))) {
+			alert('Data de Nascimento inválida')
 		} else {
-			alert("Por favor, preencha todos os campos")
+			alert("Todos os campos preenchidos corretamente!")
+			return (nome, email, telefone, dataNascimento)
 		}
 	}
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 
-		if (inputValidation(nome, email, telefone, dataNascimento)) {
+		if (inputValidation()) {
 			const cliente = {nome, email, telefone, dataNascimento}		
 			setClientes(clientes => [...clientes, cliente])
 			console.log(cliente);
