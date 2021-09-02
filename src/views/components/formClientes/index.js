@@ -7,16 +7,23 @@ function FormCliente(){
 	const [email, setEmail] = useState('')
 	const [telefone, setTelefone] = useState('')
 	const [dataNascimento, setDataNascimento] = useState('')
+	const [clientes, setClientes] = useState([])
 
-
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault();
+
+		// Informações individuais
 		console.log(nome)
 		console.log(email)
 		console.log(telefone)
 		console.log(dataNascimento)
-		console.log("Botao clicado")
+
+		// estabelecendo cliente
+		const cliente = {nome, email, telefone, dataNascimento}
+		console.log(cliente)
 		
+		// incluindo cliente na lista de clientes
+		setClientes(clientes => [...clientes, cliente])
 	}
 
 	return(
