@@ -1,3 +1,4 @@
+import * as S from './styled';
 import { useState, useEffect } from "react";
 
 function TabelaClientes() {
@@ -27,32 +28,32 @@ function TabelaClientes() {
 	}, [])
 
 	return (
-		<div>
-			<table>
+		<S.TabelaContainer>
+			<S.TabelaClientes>
 				<thead>
 					<tr>
-						<th>Nome</th>
-						<th>Email</th>
-						<th>Telefone</th>
-						<th>Data de Nascimento</th>
+						<S.TabelaHeader>Nome</S.TabelaHeader>
+						<S.TabelaHeader>Email</S.TabelaHeader>
+						<S.TabelaHeader>Telefone</S.TabelaHeader>
+						<S.TabelaHeader>Data de Nascimento</S.TabelaHeader>
 					</tr>
 				</thead>
 				<tbody>
-						{
-							data && data.length > 0 && data.map((item) => {
-								return(
-									<tr>
-										<td>{item.nome}</td>
-										<td>{item.email}</td>
-										<td>{item.telefone}</td>
-										<td>{item.dataNascimento}</td>
-									</tr>
-								)
-							})
-						}
+					{
+						data && data.length > 0 && data.map((cliente) => {
+							return (
+								<tr>
+									<S.TabelaCelulas>{cliente.nome}</S.TabelaCelulas>
+									<S.TabelaCelulas>{cliente.email}</S.TabelaCelulas>
+									<S.TabelaCelulas>{cliente.telefone}</S.TabelaCelulas>
+									<S.TabelaCelulas>{cliente.dataNascimento}</S.TabelaCelulas>
+								</tr>
+							)
+						})
+					}
 				</tbody>
-			</table>
-		</div>
+			</S.TabelaClientes>
+		</S.TabelaContainer>
 	);
 }
 
