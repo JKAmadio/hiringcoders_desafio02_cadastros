@@ -34,7 +34,6 @@ function FormCliente(){
 		if (inputValidation()) {
 			const cliente = {nome, email, telefone, dataNascimento}		
 			setClientes(clientes => [...clientes, cliente])
-			console.log(cliente);
 		} else {
 			alert("Cadastro não realizado. Tente novamente")
 		}
