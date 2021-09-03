@@ -15,7 +15,7 @@ function FormCliente(){
 		const telefoneRegExp = /^[(]..[)] [0-9]{5}-[0-9]{4}$/i;
 		const dataNascimentoRegExp = /^[0-3][0-9]\/[0-1][0-9]\/[1-9][0-9][0-9][0-9]$/g;
 
-		if(!(nome.match(nomeRegExp))) {
+		if(!nome || !(nome.match(nomeRegExp))) {
 			alert('Nome inválido')
 		} else if (!(email.match(emailRegExp))) {
 			alert('Email inválido')
