@@ -15,10 +15,12 @@ function FormProdutos () {
 	const [marca, setMarca] = useState('')
 	const [quantidade, setQuantidade] = useState('')
 	const [dataCadastro, setDataCadastro] = useState('')
+	const [inventario, setInventario] = useState([])
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		console.log(nome)
+		const produto = {nome, categoria, marca, quantidade, dataCadastro}
+		setInventario([...inventario, produto])
 	}
 
 	return (
@@ -32,6 +34,7 @@ function FormProdutos () {
 					value={nome}
 					onChange={e => setNome(e.target.value)}/>
 				<S.ProdutoSelect value={categoria} onChange={e => setCategoria(e.target.value)}>
+					<option value='' disabled hidden>Selecione uma categoria...</option>
 					<option value='cafe'>Café</option>
 					<option value='xicaras'>Xícaras/Canecas</option>
 					<option value='acessorios'>Acessórios</option>
@@ -56,6 +59,32 @@ function FormProdutos () {
 					onChange={e => setDataCadastro(e.target.value)}/>
 				<S.ProdutoBotao>Cadastrar</S.ProdutoBotao>
 			</S.FormularioProduto>
+			<S.TabelaProdutos>
+				<thead>
+					<tr>
+						<S.TabelaHeader>Nome</S.TabelaHeader>
+						<S.TabelaHeader>Categoria</S.TabelaHeader>
+						<S.TabelaHeader>Marca</S.TabelaHeader>
+						<S.TabelaHeader>Quantidade</S.TabelaHeader>
+						<S.TabelaHeader>Data de Cadastro</S.TabelaHeader>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						inventario.map(produto => {
+							return(
+								<tr>
+									<S.TabelaCelulas>{produto.nome}</S.TabelaCelulas>
+									<S.TabelaCelulas>{produto.categoria}</S.TabelaCelulas>
+									<S.TabelaCelulas>{produto.marca}</S.TabelaCelulas>
+									<S.TabelaCelulas>{produto.quantidade}</S.TabelaCelulas>
+									<S.TabelaCelulas>{produto.dataCadastro}</S.TabelaCelulas>
+								</tr>
+							)
+						})
+					}
+				</tbody>
+			</S.TabelaProdutos>
 		</div>
 	)
 }

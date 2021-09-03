@@ -57,6 +57,6 @@ export const TabelaHeader = styled.th`
 export const TabelaCelulas = styled.td`
 	border: 1px solid #c4c4c4;
 	padding: 5px 10px;
-	width: 25%;
+	width: 20%;
 	text-align: center;
 `
