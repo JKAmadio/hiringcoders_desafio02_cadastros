@@ -24,7 +24,6 @@ function FormCliente(){
 		} else if (!(dataNascimento.match(dataNascimentoRegExp))) {
 			alert('Data de Nascimento inválida')
 		} else {
-			alert("Todos os campos preenchidos corretamente!")
 			return (nome, email, telefone, dataNascimento)
 		}
 	}

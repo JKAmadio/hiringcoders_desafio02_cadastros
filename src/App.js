@@ -1,5 +1,4 @@
 import FormCliente from "./views/components/formClientes";
-import TabelaClientes from "./views/components/tabClientes";
 
 function App() {
   return (
