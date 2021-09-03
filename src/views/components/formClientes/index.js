@@ -51,6 +51,30 @@ function FormCliente(){
 				<S.ClienteInput type="text" name={dataNascimento} onChange={e => setDataNascimento(e.target.value)} placeholder="DD/MM/AAAA"/>
 				<S.ClienteBotao>Cadastrar</S.ClienteBotao>
 			</S.FormularioCliente>
+			<S.TabelaClientes>
+				<thead>
+					<tr>
+						<S.TabelaHeader>Nome</S.TabelaHeader>
+						<S.TabelaHeader>Email</S.TabelaHeader>
+						<S.TabelaHeader>Telefone</S.TabelaHeader>
+						<S.TabelaHeader>Data de Nascimento</S.TabelaHeader>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						clientes.map((cliente) => {
+							return (
+								<tr>
+									<S.TabelaCelulas>{cliente.nome}</S.TabelaCelulas>
+									<S.TabelaCelulas>{cliente.email}</S.TabelaCelulas>
+									<S.TabelaCelulas>{cliente.telefone}</S.TabelaCelulas>
+									<S.TabelaCelulas>{cliente.dataNascimento}</S.TabelaCelulas>
+								</tr>
+							)
+						})
+					}
+				</tbody>
+			</S.TabelaClientes>
 		</div>
 	)
 }
