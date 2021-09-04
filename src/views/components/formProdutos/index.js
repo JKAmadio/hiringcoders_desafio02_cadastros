@@ -28,14 +28,19 @@ function FormProdutos () {
 
 	
 	
-	function handleSubmit(e) {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (nome && categoria && marca && quantidade && dataCadastro) {
 			setId(id + 1)
 			const produto = {id, nome, categoria, marca, quantidade, dataCadastro}
-			setInventario([...inventario, produto])
+			try {
+				const response = await api.post('/produtos', produto)
+				setInventario([...inventario, response.data])
+			} catch (error) {
+				console.log(`Error: ${error.message}`)
+			}
 		} else {
-			alert('Todos os campos são obrigatórios')
+			alert('Todos os campos são obrigatórios!')
 		}
 	}
 
@@ -51,9 +56,9 @@ function FormProdutos () {
 					onChange={e => setNome(e.target.value)}/>
 				<S.ProdutoSelect value={categoria} onChange={e => setCategoria(e.target.value)}>
 					<option value='' disabled hidden>Selecione uma categoria...</option>
-					<option value='cafe'>Café</option>
-					<option value='xicaras'>Xícaras/Canecas</option>
-					<option value='acessorios'>Acessórios</option>
+					<option value='Café'>Café</option>
+					<option value='Xícaras'>Xícaras/Canecas</option>
+					<option value='Acessórios'>Acessórios</option>
 				</S.ProdutoSelect>
 				<S.ProdutoInput 
 					type="text" 

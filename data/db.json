@@ -1,84 +1,84 @@
 {
-	"produtos": [
-		{
-			"id": 1,
-			"nome": "Café Gourmet Amaral (Grãos) - 250g",
-			"categoria": "Café",
-			"marca": "Amaral",
-			"quantidade": 10,
-			"dataCadastro": "2021/09/03"
-		},
-		{
-			"id": 2,
-			"nome": "Café Gourmet Amaral (Grãos) - 500g",
-			"categoria": "Café",
-			"marca": "Amaral",
-			"quantidade": 7,
-			"dataCadastro": "2021/09/03"
-		},
-		{
-			"id": 3,
-			"nome": "Café Gourmet Amaral (Moído) - 250g",
-			"categoria": "Café",
-			"marca": "Amaral",
-			"quantidade": 13,
-			"dataCadastro": "2021/09/03"
-		},
-		{
-			"id": 4,
-			"nome": "Café Gourmet Amaral (Moído) - 500g",
-			"categoria": "Café",
-			"marca": "Amaral",
-			"quantidade": 70,
-			"dataCadastro": "2021/09/03"
-		},
-		{
-			"id": 5,
-			"nome": "Café Artefato (Grãos) - 250g",
-			"categoria": "Café",
-			"marca": "Artefato",
-			"quantidade": 20,
-			"dataCadastro": "2021/09/03"
-		},
-		{
-			"id": 6,
-			"nome": "Café Artefato (Moído) - 250g",
-			"categoria": "Café",
-			"marca": "Artefato",
-			"quantidade": 8,
-			"dataCadastro": "2021/09/03"
-		},
-		{
-			"id": 7,
-			"nome": "Caneca de Procelana Preta - 270ml",
-			"categoria": "Xícaras/Canecas",
-			"marca": "Urbe",
-			"quantidade": 18,
-			"dataCadastro": "2021/09/03"
-		},
-		{
-			"id": 8,
-			"nome": "Caneca de Procelana Branca - 270ml",
-			"categoria": "Xícaras/Canecas",
-			"marca": "Urbe",
-			"quantidade": 14,
-			"dataCadastro": "2021/09/03"
-		},
-		{
-			"id": 9,
-			"nome": "Filtro de Papel Descartável - 350unid",
-			"categoria": "Acessórios",
-			"marca": "Aeropress",
-			"quantidade": 24,
-			"dataCadastro": "2021/09/03"
-		},
-		{
-			"id": 10,
-			"nome": "Filtro de Papel Meia Lua Sem Dobra - 100unid",
-			"categoria": "Acessórios",
-			"marca": "Chemex",
-			"quantidade": 34,
-			"dataCadastro": "2021/09/03"
-		}
-	]
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Café Gourmet Amaral (Grãos) - 250g",
+      "categoria": "Café",
+      "marca": "Amaral",
+      "quantidade": 10,
+      "dataCadastro": "2021/09/03"
+    },
+    {
+      "id": 2,
+      "nome": "Café Gourmet Amaral (Grãos) - 500g",
+      "categoria": "Café",
+      "marca": "Amaral",
+      "quantidade": 7,
+      "dataCadastro": "2021/09/03"
+    },
+    {
+      "id": 3,
+      "nome": "Café Gourmet Amaral (Moído) - 250g",
+      "categoria": "Café",
+      "marca": "Amaral",
+      "quantidade": 13,
+      "dataCadastro": "2021/09/03"
+    },
+    {
+      "id": 4,
+      "nome": "Café Gourmet Amaral (Moído) - 500g",
+      "categoria": "Café",
+      "marca": "Amaral",
+      "quantidade": 70,
+      "dataCadastro": "2021/09/03"
+    },
+    {
+      "id": 5,
+      "nome": "Café Artefato (Grãos) - 250g",
+      "categoria": "Café",
+      "marca": "Artefato",
+      "quantidade": 20,
+      "dataCadastro": "2021/09/03"
+    },
+    {
+      "id": 6,
+      "nome": "Café Artefato (Moído) - 250g",
+      "categoria": "Café",
+      "marca": "Artefato",
+      "quantidade": 8,
+      "dataCadastro": "2021/09/03"
+    },
+    {
+      "id": 7,
+      "nome": "Caneca de Procelana Preta - 270ml",
+      "categoria": "Xícaras/Canecas",
+      "marca": "Urbe",
+      "quantidade": 18,
+      "dataCadastro": "2021/09/03"
+    },
+    {
+      "id": 8,
+      "nome": "Caneca de Procelana Branca - 270ml",
+      "categoria": "Xícaras/Canecas",
+      "marca": "Urbe",
+      "quantidade": 14,
+      "dataCadastro": "2021/09/03"
+    },
+    {
+      "id": 9,
+      "nome": "Filtro de Papel Descartável - 350unid",
+      "categoria": "Acessórios",
+      "marca": "Aeropress",
+      "quantidade": 24,
+      "dataCadastro": "2021/09/03"
+    },
+    {
+      "id": 10,
+      "nome": "Filtro de Papel Meia Lua Sem Dobra - 100unid",
+      "categoria": "Acessórios",
+      "marca": "Chemex",
+      "quantidade": 34,
+      "dataCadastro": "2021/09/03"
+    }
+  ]
 }
