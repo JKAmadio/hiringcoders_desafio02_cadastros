@@ -18,13 +18,12 @@ function FormProdutos () {
 				const response = await api.get('/produtos');
 				setInventario(response.data)
 				inventario.map(produto => setId(produto.id + 1))
-				console.log(inventario)
 			} catch (error) {
 				console.log(`Error: ${error.message}`)
 			}
 		}
 		fetchProdutos();
-	}, [])
+	}, [inventario])
 
 	
 	
@@ -44,10 +43,21 @@ function FormProdutos () {
 		}
 	}
 
+	const handleDelete = async (e) => {
+		try {
+			const id = +e.target.value
+			await api.delete(`/produtos/${id}`)
+			const listaProduto = inventario.filter(produto => produto.id !== id)
+			setInventario(listaProduto)
+		} catch(error) {
+			console.log(`Error: ${error.message}`)
+		}
+	}
+
 	return (
 		<div>
 			<S.FormularioProduto onSubmit={e => handleSubmit(e)}>
-				<h1>API Produtos</h1>
+				<h1>Formulário Produtos</h1>
 				<S.ProdutoInput 
 					type="text" 
 					placeholder="Nome do Produto" 
@@ -89,6 +99,7 @@ function FormProdutos () {
 						<S.TabelaHeader>Marca</S.TabelaHeader>
 						<S.TabelaHeader>Quantidade</S.TabelaHeader>
 						<S.TabelaHeader>Data de Cadastro</S.TabelaHeader>
+						<S.TabelaHeader>Remover</S.TabelaHeader>
 					</tr>
 				</thead>
 				<tbody>
@@ -102,6 +113,7 @@ function FormProdutos () {
 									<S.TabelaCelulas>{produto.marca}</S.TabelaCelulas>
 									<S.TabelaCelulas>{produto.quantidade}</S.TabelaCelulas>
 									<S.TabelaCelulas>{produto.dataCadastro}</S.TabelaCelulas>
+									<S.TabelaCelulas><S.DeleteButton value={produto.id} onClick={e => handleDelete(e)}>X</S.DeleteButton></S.TabelaCelulas>
 								</tr>
 							)
 						})

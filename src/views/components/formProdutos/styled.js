@@ -52,11 +52,23 @@ export const TabelaProdutos = styled.table`
 export const TabelaHeader = styled.th`
 	border: 1px solid #c4c4c4;
 	padding: 5px;
-	`
+`
 
 export const TabelaCelulas = styled.td`
 	border: 1px solid #c4c4c4;
 	padding: 5px 10px;
 	width: 20%;
 	text-align: center;
+`
+
+export const DeleteButton = styled.button`
+	color: red;
+	font-weight: bold;
+	font-size: 18px;
+	background-color: white;
+	border: none;
+
+	&:hover{
+		cursor: pointer;
+	}
 `
