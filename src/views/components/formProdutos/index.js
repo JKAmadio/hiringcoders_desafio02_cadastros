@@ -57,7 +57,7 @@ function FormProdutos () {
 				<S.ProdutoSelect value={categoria} onChange={e => setCategoria(e.target.value)}>
 					<option value='' disabled hidden>Selecione uma categoria...</option>
 					<option value='Café'>Café</option>
-					<option value='Xícaras'>Xícaras/Canecas</option>
+					<option value='Xícaras/Canecas'>Xícaras/Canecas</option>
 					<option value='Acessórios'>Acessórios</option>
 				</S.ProdutoSelect>
 				<S.ProdutoInput 
