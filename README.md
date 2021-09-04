@@ -16,7 +16,7 @@ Neste Desafio Final foi desenvolvido uma página para cadastramento de clientes 
 
 ## Tecnologias Utilizadas
 - React
-- -Axios
+- Axios
 - Styled Components
 
 ## Uso
@@ -24,6 +24,11 @@ Neste Desafio Final foi desenvolvido uma página para cadastramento de clientes 
 #### Clonar o repositório
 ```
 git clone https://github.com/JKAmadio/hiringcoders_desafio02_cadastros
+```
+
+#### Inicializar servidor com o banco de dados
+```
+json-server -p 3500 -w ./data/db.json
 ```
 
 #### Inicializar o React
