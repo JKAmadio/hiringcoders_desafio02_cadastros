@@ -1,15 +1,10 @@
 import * as S from './styled'
-//import Cliente from './contentful'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import api from '../../../api/produtos'
 
 function FormProdutos () {
-	/*
-	Cliente.getEntries({
-		content_type: 'product'
-	})
-	.then(response => console.log('RESPONSE', response.items))
-	.catch(console.error)*/
 
+	const [id, setId] = useState(1)
 	const [nome, setNome] = useState('')
 	const [categoria, setCategoria] = useState('')
 	const [marca, setMarca] = useState('')
@@ -17,10 +12,31 @@ function FormProdutos () {
 	const [dataCadastro, setDataCadastro] = useState('')
 	const [inventario, setInventario] = useState([])
 
+	useEffect(() => {
+		const fetchProdutos = async () => {
+			try {
+				const response = await api.get('/produtos');
+				setInventario(response.data)
+				inventario.map(produto => setId(produto.id + 1))
+				console.log(inventario)
+			} catch (error) {
+				console.log(`Error: ${error.message}`)
+			}
+		}
+		fetchProdutos();
+	}, [])
+
+	
+	
 	function handleSubmit(e) {
 		e.preventDefault();
-		const produto = {nome, categoria, marca, quantidade, dataCadastro}
-		setInventario([...inventario, produto])
+		if (nome && categoria && marca && quantidade && dataCadastro) {
+			setId(id + 1)
+			const produto = {id, nome, categoria, marca, quantidade, dataCadastro}
+			setInventario([...inventario, produto])
+		} else {
+			alert('Todos os campos são obrigatórios')
+		}
 	}
 
 	return (
@@ -62,6 +78,7 @@ function FormProdutos () {
 			<S.TabelaProdutos>
 				<thead>
 					<tr>
+						<S.TabelaHeader>id</S.TabelaHeader>
 						<S.TabelaHeader>Nome</S.TabelaHeader>
 						<S.TabelaHeader>Categoria</S.TabelaHeader>
 						<S.TabelaHeader>Marca</S.TabelaHeader>
@@ -74,6 +91,7 @@ function FormProdutos () {
 						inventario.map(produto => {
 							return(
 								<tr>
+									<S.TabelaCelulas>{produto.id}</S.TabelaCelulas>
 									<S.TabelaCelulas>{produto.nome}</S.TabelaCelulas>
 									<S.TabelaCelulas>{produto.categoria}</S.TabelaCelulas>
 									<S.TabelaCelulas>{produto.marca}</S.TabelaCelulas>

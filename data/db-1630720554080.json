@@ -1,0 +1,84 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "nome": "Café Gourmet Amaral (Grãos) - 250g",
+      "categoria": "Café",
+      "marca": "Amaral",
+      "quatidade": 10,
+      "data de cadastro": "2021/09/03"
+    },
+    {
+      "id": 2,
+      "nome": "Café Gourmet Amaral (Grãos) - 500g",
+      "categoria": "Café",
+      "marca": "Amaral",
+      "quatidade": 7,
+      "data de cadastro": "2021/09/03"
+    },
+    {
+      "id": 3,
+      "nome": "Café Gourmet Amaral (Moído) - 250g",
+      "categoria": "Café",
+      "marca": "Amaral",
+      "quatidade": 13,
+      "data de cadastro": "2021/09/03"
+    },
+    {
+      "id": 4,
+      "nome": "Café Gourmet Amaral (Moído) - 500g",
+      "categoria": "Café",
+      "marca": "Amaral",
+      "quatidade": 70,
+      "data de cadastro": "2021/09/03"
+    },
+    {
+      "id": 5,
+      "nome": "Café Artefato (Grãos) - 250g",
+      "categoria": "Café",
+      "marca": "Artefato",
+      "quatidade": 20,
+      "data de cadastro": "2021/09/03"
+    },
+    {
+      "id": 6,
+      "nome": "Café Artefato (Moído) - 250g",
+      "categoria": "Café",
+      "marca": "Artefato",
+      "quatidade": 8,
+      "data de cadastro": "2021/09/03"
+    },
+    {
+      "id": 7,
+      "nome": "Caneca de Procelana Preta - 270ml",
+      "categoria": "Xícaras/Canecas",
+      "marca": "Urbe",
+      "quatidade": 18,
+      "data de cadastro": "2021/09/03"
+    },
+    {
+      "id": 8,
+      "nome": "Caneca de Procelana Branca - 270ml",
+      "categoria": "Xícaras/Canecas",
+      "marca": "Urbe",
+      "quatidade": 14,
+      "data de cadastro": "2021/09/03"
+    },
+    {
+      "id": 9,
+      "nome": "Filtro de Papel Descartável - 350unid",
+      "categoria": "Acessórios",
+      "marca": "Aeropress",
+      "quatidade": 24,
+      "data de cadastro": "2021/09/03"
+    },
+    {
+      "id": 10,
+      "nome": "Filtro de Papel Meia Lua Sem Dobra - 100unid",
+      "categoria": "Acessórios",
+      "marca": "Chemex",
+      "quatidade": 34,
+      "data de cadastro": "2021/09/03"
+    }
+  ]
+}
