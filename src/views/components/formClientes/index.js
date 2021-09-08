@@ -14,7 +14,6 @@ function FormCliente(){
 		const nomeRegExp = /^[a-z\s]*$/gi;
 		const emailRegExp = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
 		const telefoneRegExp = /^[(]..[)] [0-9]{5}-[0-9]{4}$/i;
-		const dataNascimentoRegExp = /^[0-3][0-9]\/[0-1][0-9]\/[1-9][0-9][0-9][0-9]$/g;
 
 		if(!nome || !(nome.match(nomeRegExp))) {
 			alert('Nome inválido')
@@ -22,7 +21,7 @@ function FormCliente(){
 			alert('Email inválido')
 		} else if(!(telefone.match(telefoneRegExp))) {
 			alert('Telefone inválido')
-		} else if (!(dataNascimento.match(dataNascimentoRegExp))) {
+		} else if (!dataNascimento) {
 			alert('Data de Nascimento inválida')
 		} else {
 			return (nome, email, telefone, dataNascimento)
@@ -31,7 +30,6 @@ function FormCliente(){
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-
 		if (inputValidation()) {
 			const cliente = {nome, email, telefone, dataNascimento}		
 			setClientes(clientes => [...clientes, cliente])
@@ -47,7 +45,7 @@ function FormCliente(){
 				<S.ClienteInput type="text" name={nome} onChange={e => setNome(e.target.value)} placeholder="Nome Completo"/>
 				<S.ClienteInput type="text" name={email} onChange={e => setEmail(e.target.value)} placeholder="seu_email@dominio.com"/>
 				<S.ClienteInput type="text" name={telefone} onChange={e => setTelefone(e.target.value)} placeholder="(XX) XXXXX-XXXX"/>
-				<S.ClienteInput type="text" name={dataNascimento} onChange={e => setDataNascimento(e.target.value)} placeholder="DD/MM/AAAA"/>
+				<S.ClienteInput type="date" name={dataNascimento} onChange={e => setDataNascimento(e.target.value)} placeholder="DD/MM/AAAA"/>
 				<S.ClienteBotao>Cadastrar</S.ClienteBotao>
 			</S.FormularioCliente>
 			<S.TabelaClientes>
