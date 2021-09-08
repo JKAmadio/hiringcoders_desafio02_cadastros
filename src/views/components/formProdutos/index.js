@@ -64,7 +64,7 @@ function FormProdutos () {
 					placeholder="Nome do Produto" 
 					name={nome}
 					onChange={e => setNome(e.target.value)}/>
-				<S.ProdutoSelect name={categoria} onChange={e => setCategoria(e.target.value)}>
+				<S.ProdutoSelect name={categoria} value={categoria} onChange={e => setCategoria(e.target.value)}>
 					<option value='' disabled hidden>Selecione uma categoria...</option>
 					<option value='Café'>Café</option>
 					<option value='Xícaras/Canecas'>Xícaras/Canecas</option>
