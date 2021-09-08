@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+`
+
 export const FormularioProduto = styled.form`
 	display:flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
 	width: 50%;
-	margin: 10vh auto;
+	margin: 0 auto;
 `
 
 export const ProdutoInput = styled.input`

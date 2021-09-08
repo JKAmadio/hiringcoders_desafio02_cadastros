@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import * as S from './styled'
 
 function FormCliente(){
@@ -40,9 +41,9 @@ function FormCliente(){
 	}
 
 	return(
-		<div>
+		<S.Container>
 			<S.FormularioCliente autoComplete="off" onSubmit={handleSubmit}>
-				<h1>Formulario Cliente</h1>
+				<h1>Formulário Cliente</h1>
 				<S.ClienteInput type="text" name={nome} onChange={e => setNome(e.target.value)} placeholder="Nome Completo"/>
 				<S.ClienteInput type="text" name={email} onChange={e => setEmail(e.target.value)} placeholder="seu_email@dominio.com"/>
 				<S.ClienteInput type="text" name={telefone} onChange={e => setTelefone(e.target.value)} placeholder="(XX) XXXXX-XXXX"/>
@@ -73,7 +74,8 @@ function FormCliente(){
 					}
 				</tbody>
 			</S.TabelaClientes>
-		</div>
+			<Link to="/"><S.ClienteBotao>Voltar para Home</S.ClienteBotao></Link>
+		</S.Container>
 	)
 }
 

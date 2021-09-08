@@ -1,5 +1,6 @@
 import * as S from './styled'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import api from '../../../api/produtos'
 
 function FormProdutos () {
@@ -55,7 +56,7 @@ function FormProdutos () {
 	}
 
 	return (
-		<div>
+		<S.Container>
 			<S.FormularioProduto onSubmit={e => handleSubmit(e)}>
 				<h1>Formulário Produtos</h1>
 				<S.ProdutoInput 
@@ -120,7 +121,8 @@ function FormProdutos () {
 					}
 				</tbody>
 			</S.TabelaProdutos>
-		</div>
+			<Link to="/"><S.ProdutoBotao>Voltar para Home</S.ProdutoBotao></Link>
+		</S.Container>
 	)
 }
 
