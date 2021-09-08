@@ -45,7 +45,7 @@ function FormCliente(){
 				<S.ClienteInput type="text" name={nome} onChange={e => setNome(e.target.value)} placeholder="Nome Completo"/>
 				<S.ClienteInput type="text" name={email} onChange={e => setEmail(e.target.value)} placeholder="seu_email@dominio.com"/>
 				<S.ClienteInput type="text" name={telefone} onChange={e => setTelefone(e.target.value)} placeholder="(XX) XXXXX-XXXX"/>
-				<S.ClienteInput type="date" name={dataNascimento} onChange={e => setDataNascimento(e.target.value)} placeholder="DD/MM/AAAA"/>
+				<S.ClienteInput type="date" name={dataNascimento} onChange={e => setDataNascimento(e.target.value.split('-').reverse().join('/'))} placeholder="DD/MM/AAAA"/>
 				<S.ClienteBotao>Cadastrar</S.ClienteBotao>
 			</S.FormularioCliente>
 			<S.TabelaClientes>
