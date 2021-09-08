@@ -62,10 +62,9 @@ function FormProdutos () {
 				<S.ProdutoInput 
 					type="text" 
 					placeholder="Nome do Produto" 
-					name="nome"
-					value={nome}
+					name={nome}
 					onChange={e => setNome(e.target.value)}/>
-				<S.ProdutoSelect value={categoria} onChange={e => setCategoria(e.target.value)}>
+				<S.ProdutoSelect name={categoria} onChange={e => setCategoria(e.target.value)}>
 					<option value='' disabled hidden>Selecione uma categoria...</option>
 					<option value='Café'>Café</option>
 					<option value='Xícaras/Canecas'>Xícaras/Canecas</option>
@@ -74,21 +73,18 @@ function FormProdutos () {
 				<S.ProdutoInput 
 					type="text" 
 					placeholder="Marca do Produto" 
-					name="marca"
-					value={marca}
+					name={marca}
 					onChange={e => setMarca(e.target.value)}/>
 				<S.ProdutoInput 
 					type="number" 
 					placeholder="Quantidade" 
-					name="quantidade"
-					value={quantidade}
+					name={quantidade}
 					onChange={e => setQuantidade(e.target.value)}/>
 				<S.ProdutoInput 
 					type="date" 
 					placeholder="DD/MM/AAA" 
-					name="dataCadastro"
-					value={dataCadastro}
-					onChange={e => setDataCadastro(e.target.value)}/>
+					name={dataCadastro}
+					onChange={e => setDataCadastro(e.target.value.split('-').reverse().join('/'))}/>
 				<S.ProdutoBotao>Cadastrar</S.ProdutoBotao>
 			</S.FormularioProduto>
 			<S.TabelaProdutos>
